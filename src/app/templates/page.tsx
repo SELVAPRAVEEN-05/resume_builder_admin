@@ -64,7 +64,7 @@ export default function TemplatesPage() {
         </div>
         <div className="bg-white border border-gray-200 rounded-xl p-3 flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600 font-bold text-sm">
-            {(totalUses / 1000).toFixed(1)}k
+            {(totalUses / 1000).toFixed(0)}
           </div>
           <div><p className="text-xs font-semibold text-gray-800">Total Uses</p><p className="text-[10px] text-gray-400">Across all templates</p></div>
         </div>

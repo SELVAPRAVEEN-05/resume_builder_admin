@@ -1,25 +1,29 @@
 "use client";
 
-import { useState } from "react";
-import { Search, Eye, Trash2, Download } from "lucide-react";
 import Avatar from "@/components/ui/Avatar";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { resumes as initialResumes, Resume } from "@/lib/data";
 import clsx from "clsx";
+import { Download, Eye, Search, Trash2 } from "lucide-react";
+import { useState } from "react";
 
 export default function ResumesPage() {
   const [search, setSearch] = useState("");
   const [templateFilter, setTemplateFilter] = useState("All");
   const [resumeList, setResumeList] = useState<Resume[]>(initialResumes);
 
-  const templates = ["All", ...Array.from(new Set(initialResumes.map((r) => r.template)))];
+  const templates = [
+    "All",
+    ...Array.from(new Set(initialResumes.map((r) => r.template))),
+  ];
 
   const filtered = resumeList.filter((r) => {
     const matchSearch =
       r.title.toLowerCase().includes(search.toLowerCase()) ||
       r.student.toLowerCase().includes(search.toLowerCase());
-    const matchTemplate = templateFilter === "All" || r.template === templateFilter;
+    const matchTemplate =
+      templateFilter === "All" || r.template === templateFilter;
     return matchSearch && matchTemplate;
   });
 
@@ -27,8 +31,9 @@ export default function ResumesPage() {
     setResumeList((prev) => prev.filter((r) => r.id !== id));
   };
 
-  const templateVariant = (color: Resume["templateColor"]): "green" | "blue" | "amber" | "purple" =>
-    color;
+  const templateVariant = (
+    color: Resume["templateColor"],
+  ): "green" | "blue" | "amber" | "purple" => color;
 
   return (
     <div className="space-y-4">
@@ -36,7 +41,9 @@ export default function ResumesPage() {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-base font-semibold text-gray-900">Resumes</h2>
-          <p className="text-xs text-gray-400 mt-0.5">All student-created resumes</p>
+          <p className="text-xs text-gray-400 mt-0.5">
+            All student-created resumes
+          </p>
         </div>
         <Button variant="ghost">
           <Download size={13} /> Export All
@@ -64,7 +71,9 @@ export default function ResumesPage() {
             <option key={t}>{t}</option>
           ))}
         </select>
-        <p className="text-xs text-gray-400 ml-auto">{filtered.length} results</p>
+        <p className="text-xs text-gray-400 ml-auto">
+          {filtered.length} results
+        </p>
       </div>
 
       {/* Table */}
@@ -72,8 +81,19 @@ export default function ResumesPage() {
         <table className="w-full border-collapse">
           <thead>
             <tr className="bg-gray-50 border-b border-gray-200">
-              {["Resume Name", "Student", "Template", "Created", "Downloads", "Status", "Actions"].map((h) => (
-                <th key={h} className="text-left px-4 py-2.5 text-[11px] font-semibold text-gray-400 uppercase tracking-wide whitespace-nowrap">
+              {[
+                "Resume Name",
+                "Student",
+                "Template",
+                "Created",
+                "Downloads",
+                "Status",
+                "Actions",
+              ].map((h) => (
+                <th
+                  key={h}
+                  className="text-left px-4 py-2.5 text-[11px] font-semibold text-gray-400 uppercase tracking-wide whitespace-nowrap"
+                >
                   {h}
                 </th>
               ))}
@@ -85,20 +105,28 @@ export default function ResumesPage() {
                 key={resume.id}
                 className={clsx(
                   "border-b border-gray-100 hover:bg-gray-50 transition-colors",
-                  i === filtered.length - 1 && "border-b-0"
+                  i === filtered.length - 1 && "border-b-0",
                 )}
               >
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-2.5">
                     <Avatar name={resume.template[0]} size="sm" rounded />
-                    <span className="text-xs font-medium text-gray-800">{resume.title}</span>
+                    <span className="text-xs font-medium text-gray-800">
+                      {resume.title}
+                    </span>
                   </div>
                 </td>
-                <td className="px-4 py-3 text-xs text-gray-500">{resume.student}</td>
-                <td className="px-4 py-3">
-                  <Badge variant={templateVariant(resume.templateColor)}>{resume.template}</Badge>
+                <td className="px-4 py-3 text-xs text-gray-500">
+                  {resume.student}
                 </td>
-                <td className="px-4 py-3 text-xs text-gray-400">{resume.created}</td>
+                <td className="px-4 py-3">
+                  <Badge variant={templateVariant(resume.templateColor)}>
+                    {resume.template}
+                  </Badge>
+                </td>
+                <td className="px-4 py-3 text-xs text-gray-400">
+                  {resume.created}
+                </td>
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-1.5 text-xs text-gray-600">
                     <Download size={11} className="text-gray-400" />
@@ -106,7 +134,9 @@ export default function ResumesPage() {
                   </div>
                 </td>
                 <td className="px-4 py-3">
-                  <Badge variant={resume.status === "Published" ? "blue" : "gray"}>
+                  <Badge
+                    variant={resume.status === "Published" ? "blue" : "gray"}
+                  >
                     {resume.status}
                   </Badge>
                 </td>
@@ -115,7 +145,11 @@ export default function ResumesPage() {
                     <Button variant="outline" size="sm">
                       <Eye size={11} /> Preview
                     </Button>
-                    <Button variant="danger" size="sm" onClick={() => handleDelete(resume.id)}>
+                    <Button
+                      variant="danger"
+                      size="sm"
+                      onClick={() => handleDelete(resume.id)}
+                    >
                       <Trash2 size={11} />
                     </Button>
                   </div>
@@ -124,7 +158,10 @@ export default function ResumesPage() {
             ))}
             {filtered.length === 0 && (
               <tr>
-                <td colSpan={7} className="px-4 py-10 text-center text-xs text-gray-400">
+                <td
+                  colSpan={7}
+                  className="px-4 py-10 text-center text-xs text-gray-400"
+                >
                   No resumes found.
                 </td>
               </tr>
@@ -137,7 +174,9 @@ export default function ResumesPage() {
       <div className="grid grid-cols-3 gap-3">
         <div className="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3">
           <div className="w-9 h-9 rounded-lg bg-primary-100 flex items-center justify-center">
-            <span className="text-lg font-bold text-primary-600">{resumeList.length}</span>
+            <span className="text-lg font-bold text-primary-600">
+              {resumeList.length}
+            </span>
           </div>
           <div>
             <p className="text-xs font-semibold text-gray-800">Total Resumes</p>
@@ -162,7 +201,9 @@ export default function ResumesPage() {
             </span>
           </div>
           <div>
-            <p className="text-xs font-semibold text-gray-800">Total Downloads</p>
+            <p className="text-xs font-semibold text-gray-800">
+              Total Downloads
+            </p>
             <p className="text-[10px] text-gray-400">Across all resumes</p>
           </div>
         </div>

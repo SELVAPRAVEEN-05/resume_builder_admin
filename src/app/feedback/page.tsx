@@ -11,7 +11,11 @@ function StarRating({ rating }: { rating: number }) {
         <Star
           key={s}
           size={12}
-          className={s <= rating ? "text-amber-400 fill-amber-400" : "text-gray-200 fill-gray-200"}
+          className={
+            s <= rating
+              ? "text-amber-400 fill-amber-400"
+              : "text-gray-200 fill-gray-200"
+          }
         />
       ))}
     </div>
@@ -33,22 +37,31 @@ export default function FeedbackPage() {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-base font-semibold text-gray-900">Feedback</h2>
-          <p className="text-xs text-gray-400 mt-0.5">Student reviews and ratings</p>
+          <p className="text-xs text-gray-400 mt-0.5">
+            Student reviews and ratings
+          </p>
         </div>
       </div>
 
       {/* Rating Summary */}
       <div className="bg-white border border-gray-200 rounded-xl p-5 flex items-center gap-10">
         <div className="text-center flex-shrink-0">
-          <p className="text-5xl font-bold text-primary-500">{avgRating.toFixed(1)}</p>
+          <p className="text-5xl font-bold text-primary-500">
+            {avgRating.toFixed(1)}
+          </p>
           <StarRating rating={Math.round(avgRating)} />
-          <p className="text-xs text-gray-400 mt-1">{feedbackItems.length} reviews</p>
+          <p className="text-xs text-gray-400 mt-1">
+            {feedbackItems.length} reviews
+          </p>
         </div>
         <div className="flex-1 space-y-1.5">
           {ratingDistribution.map(({ star, count }) => (
             <div key={star} className="flex items-center gap-2">
               <span className="text-xs text-gray-500 w-4">{star}</span>
-              <Star size={10} className="text-amber-400 fill-amber-400 flex-shrink-0" />
+              <Star
+                size={10}
+                className="text-amber-400 fill-amber-400 flex-shrink-0"
+              />
               <div className="flex-1 bg-gray-100 rounded-full h-1.5">
                 <div
                   className="h-1.5 bg-amber-400 rounded-full transition-all"
@@ -64,18 +77,25 @@ export default function FeedbackPage() {
       {/* Feedback List */}
       <div className="space-y-3">
         {feedbackItems.map((item) => (
-          <div key={item.id} className="bg-white border border-gray-200 rounded-xl p-4">
+          <div
+            key={item.id}
+            className="bg-white border border-gray-200 rounded-xl p-4"
+          >
             <div className="flex items-start gap-3 mb-2">
               <Avatar name={item.name} size="sm" />
               <div className="flex-1">
                 <div className="flex items-center justify-between">
-                  <p className="text-xs font-semibold text-gray-800">{item.name}</p>
+                  <p className="text-xs font-semibold text-gray-800">
+                    {item.name}
+                  </p>
                   <p className="text-[10px] text-gray-400">{item.date}</p>
                 </div>
                 <StarRating rating={item.rating} />
               </div>
             </div>
-            <p className="text-xs text-gray-600 leading-relaxed pl-8">{item.text}</p>
+            <p className="text-xs text-gray-600 leading-relaxed pl-8">
+              {item.text}
+            </p>
           </div>
         ))}
       </div>

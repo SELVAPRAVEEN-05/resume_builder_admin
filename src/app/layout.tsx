@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Sidebar from "@/components/layout/Sidebar";
-import Topbar from "@/components/layout/Topbar";
+import ClientLayout from "./ClientLayout";
 
 export const metadata: Metadata = {
   title: "ResumeBuilder Admin",
@@ -24,15 +23,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-gray-50 font-sans antialiased">
-        <div className="flex h-screen overflow-hidden">
-          <Sidebar />
-          <div className="flex flex-col flex-1 overflow-hidden">
-            <Topbar />
-            <main className="flex-1 overflow-y-auto p-6 bg-gray-50">
-              {children}
-            </main>
-          </div>
-        </div>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

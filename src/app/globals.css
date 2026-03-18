@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --primary: #10B981;
-  --primary-light: #D1FAE5;
+  --primary: #10b981;
+  --primary-light: #d1fae5;
   --primary-dark: #059669;
 }
 
@@ -15,11 +15,11 @@
 }
 
 html {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: "DM Sans", system-ui, sans-serif;
 }
 
 body {
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
   color: #111827;
 }
 
@@ -29,14 +29,14 @@ body {
   height: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #F3F4F6;
+  background: #f3f4f6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D1D5DB;
+  background: #d1d5db;
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9CA3AF;
+  background: #9ca3af;
 }
 
 /* Smooth transitions */

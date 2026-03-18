@@ -67,11 +67,11 @@ export const resumes: Resume[] = [
 ];
 
 export const templates: Template[] = [
-  { id: "1", name: "Modern Green", uses: 5234, status: "Active", color: "#10B981", bgClass: "from-emerald-50 to-green-100" },
-  { id: "2", name: "Classic Blue", uses: 3891, status: "Active", color: "#3B82F6", bgClass: "from-blue-50 to-blue-100" },
-  { id: "3", name: "Creative Purple", uses: 2144, status: "Active", color: "#7C3AED", bgClass: "from-violet-50 to-purple-100" },
-  { id: "4", name: "Minimal Amber", uses: 987, status: "Disabled", color: "#D97706", bgClass: "from-amber-50 to-yellow-100" },
-  { id: "5", name: "Bold Red", uses: 621, status: "Disabled", color: "#EF4444", bgClass: "from-red-50 to-rose-100" },
+  { id: "1", name: "Modern Green", uses: 23, status: "Active", color: "#10B981", bgClass: "from-emerald-50 to-green-100" },
+  { id: "2", name: "Classic Blue", uses: 16, status: "Active", color: "#3B82F6", bgClass: "from-blue-50 to-blue-100" },
+  { id: "3", name: "Creative Purple", uses: 12, status: "Active", color: "#7C3AED", bgClass: "from-violet-50 to-purple-100" },
+  { id: "4", name: "Minimal Amber", uses: 10, status: "Disabled", color: "#D97706", bgClass: "from-amber-50 to-yellow-100" },
+  { id: "5", name: "Bold Red", uses: 8, status: "Disabled", color: "#EF4444", bgClass: "from-red-50 to-rose-100" },
 ];
 
 export const feedbackItems: FeedbackItem[] = [
@@ -90,12 +90,12 @@ export const announcements: Announcement[] = [
 ];
 
 export const registrationData = [
-  { month: "Oct", registrations: 420, resumes: 680 },
-  { month: "Nov", registrations: 580, resumes: 820 },
-  { month: "Dec", registrations: 710, resumes: 950 },
-  { month: "Jan", registrations: 650, resumes: 880 },
-  { month: "Feb", registrations: 830, resumes: 1100 },
-  { month: "Mar", registrations: 910, resumes: 1200 },
+  // { month: "Oct", registrations: 0, resumes: 0},
+  { month: "Nov", registrations: 0, resumes: 0 },
+  { month: "Dec", registrations: 1, resumes: 2 },
+  { month: "Jan", registrations: 4, resumes: 6 },
+  { month: "Feb", registrations: 16, resumes: 21 },
+  { month: "Mar", registrations: 24, resumes: 40 },
 ];
 
 export const templateDistribution = [

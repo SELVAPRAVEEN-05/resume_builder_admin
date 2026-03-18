@@ -53,7 +53,7 @@ export default function AnalyticsPage() {
       <div className="grid grid-cols-2 gap-4">
         <Card>
           <p className="text-xs text-gray-400 mb-1">Total Registered Users</p>
-          <p className="text-3xl font-bold text-primary-500">12,483</p>
+          <p className="text-3xl font-bold text-primary-500">15</p>
           <p className="text-xs text-primary-500 mt-1">↑ 8.2% from last month</p>
           <ResponsiveContainer width="100%" height={60} className="mt-3">
             <BarChart data={registrationData} barSize={8}>
@@ -63,7 +63,7 @@ export default function AnalyticsPage() {
         </Card>
         <Card>
           <p className="text-xs text-gray-400 mb-1">Total Resumes Created</p>
-          <p className="text-3xl font-bold text-blue-500">34,921</p>
+          <p className="text-3xl font-bold text-blue-500">34</p>
           <p className="text-xs text-primary-500 mt-1">↑ 12.4% from last month</p>
           <ResponsiveContainer width="100%" height={60} className="mt-3">
             <BarChart data={registrationData} barSize={8}>
@@ -131,7 +131,7 @@ export default function AnalyticsPage() {
                   />
                 </div>
                 <span className="text-[11px] text-gray-400 w-10 text-right flex-shrink-0">
-                  {(t.uses / 1000).toFixed(1)}k
+                  {t.uses}
                 </span>
               </div>
             ))}

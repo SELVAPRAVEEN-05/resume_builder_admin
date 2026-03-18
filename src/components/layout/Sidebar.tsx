@@ -24,7 +24,7 @@ interface NavItem {
 
 const mainNav: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { label: "Users", href: "/users", icon: Users, badge: "1.2k" },
+  { label: "Users", href: "/users", icon: Users, badge: "15" },
   { label: "Resumes", href: "/resumes", icon: FileText },
   { label: "Templates", href: "/templates", icon: Layout },
 ];
@@ -35,7 +35,6 @@ const insightNav: NavItem[] = [
 ];
 
 const manageNav: NavItem[] = [
-  { label: "Announcements", href: "/announcements", icon: Bell },
   { label: "Settings", href: "/settings", icon: Settings },
 ];
 
