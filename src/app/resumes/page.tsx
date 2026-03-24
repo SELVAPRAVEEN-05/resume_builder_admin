@@ -142,9 +142,9 @@ export default function ResumesPage() {
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-1">
-                    <Button variant="outline" size="sm">
+                    {/* <Button variant="outline" size="sm">
                       <Eye size={11} /> Preview
-                    </Button>
+                    </Button> */}
                     <Button
                       variant="danger"
                       size="sm"

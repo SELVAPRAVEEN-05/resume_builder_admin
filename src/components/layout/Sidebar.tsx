@@ -24,7 +24,7 @@ interface NavItem {
 
 const mainNav: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { label: "Users", href: "/users", icon: Users, badge: "15" },
+  { label: "Users", href: "/users", icon: Users, badge: "12" },
   { label: "Resumes", href: "/resumes", icon: FileText },
   { label: "Templates", href: "/templates", icon: Layout },
 ];

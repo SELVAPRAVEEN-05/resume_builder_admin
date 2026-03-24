@@ -65,7 +65,7 @@ export default function DashboardPage() {
         <StatCard
           label="New Users Today"
           value="1"
-          change="24 from yesterday"
+          change="2 from yesterday"
           changeType="up"
           icon={UserPlus}
           iconColor="purple"

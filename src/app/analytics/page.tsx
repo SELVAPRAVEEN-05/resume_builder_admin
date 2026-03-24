@@ -12,24 +12,8 @@ import {
   CartesianGrid,
 } from "recharts";
 import Card from "@/components/ui/Card";
-import { registrationData, templates } from "@/lib/data";
+import { dailyActive, kpiData, registrationData, templates } from "@/lib/data";
 import { TrendingUp, TrendingDown } from "lucide-react";
-
-const kpiData = [
-  { label: "Avg. Session Time", value: "14.2 min", change: "+2.3 min", up: true, color: "text-primary-600" },
-  { label: "Download Rate", value: "26.4%", change: "-0.8%", up: false, color: "text-blue-600" },
-  { label: "30-day Retention", value: "71.8%", change: "+5.1%", up: true, color: "text-purple-600" },
-];
-
-const dailyActive = [
-  { day: "Mon", users: 820 },
-  { day: "Tue", users: 940 },
-  { day: "Wed", users: 880 },
-  { day: "Thu", users: 1050 },
-  { day: "Fri", users: 990 },
-  { day: "Sat", users: 720 },
-  { day: "Sun", users: 650 },
-];
 
 const maxTemplateUses = Math.max(...templates.map((t) => t.uses));
 
