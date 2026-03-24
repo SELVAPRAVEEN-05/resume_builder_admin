@@ -24,7 +24,7 @@ export default function LoginPage() {
     setLoading(true);
     await new Promise((res) => setTimeout(res, 1200));
 
-    if (email === "admin@resumebuilder.in" && password === "admin123") {
+    if (email === "admin@gmail.com" && password === "admin123") {
       router.push("/dashboard");
     } else {
       setError("Invalid email or password.");
