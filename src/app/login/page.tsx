@@ -3,6 +3,7 @@
 import { AlertCircle, Eye, EyeOff, FileCheck, Lock, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import axios from "axios";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -22,12 +23,20 @@ export default function LoginPage() {
     }
 
     setLoading(true);
-    await new Promise((res) => setTimeout(res, 1200));
 
-    if (email === "admin@gmail.com" && password === "admin123") {
+    try {
+      const response = await axios.post('https://resume-server-glcw.onrender.com/api/auth/login', {
+        email,
+        password
+      });
+
+      // Assuming the response contains a token
+      const { token } = response.data;
+      localStorage.setItem('token', token);
       router.push("/dashboard");
-    } else {
+    } catch (err) {
       setError("Invalid email or password.");
+    } finally {
       setLoading(false);
     }
   };
